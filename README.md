@@ -1,7 +1,7 @@
 # Variable importance in neural networks
 
 ## Installation instructions
-Runs with python 2.7 (others are not tested)
+Runs with python 2.7 (other versions are not tested).
 See `requirements.txt` for python libraries/versions
 
 ## Main files
