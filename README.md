@@ -1,10 +1,10 @@
 # Variable importance in neural networks
 
-# Installation instructions
+## Installation instructions
 Runs with python 2.7 (others are not tested)
 See `requirements.txt` for python libraries/versions
 
-# Main files
+## Main files
 * `main_norefit.py`: Estimates variable importance by estimating the full and reduced conditional means simultaneously in a single neural network
 * `main_refit.py`: Estimates variable importance by estimating the full and reduced conditional means using separate neural networks
 * `neural_network_aug_mtl.py`: The augmented MTL neural network for estimating full and reduced conditional means simultaneously
@@ -13,7 +13,7 @@ See `requirements.txt` for python libraries/versions
 * `variable_importance*`: Computes the variable importance estimates from the estimated conditional means
 * `process_icu_data.py`: Code for pre-processing the ICU data example in the paper
 
-# Examples
+## Examples
 To estimate the variable importance of each of the six variables in the six-variable function in the paper, run
 ```
 python main_norefit.py --sim-func six_func --cond-layer-sizes 5,2,1
@@ -23,7 +23,8 @@ To estimate importance of variables groups 1,2;3,4;5,6, run
 python main_norefit.py --var-import 0,1;2,3;4,5 --sim-func six_func --cond-layer-sizes 5,2,1
 ```
 
-## Six-variable simulation example in the paper
+## Paper Examples
+### Six-variable simulation example in the paper
 For the simulation where we fit separate networks, we did cross validation over the network structures in the dictionaries below.
 ```
 # Network sizes for estimating the full conditional mean
@@ -69,7 +70,7 @@ We then ran:
 python main_norefit.py --sim-func six_func --num-p 6 --var-import-idx 0,1;2,3;4,5 --sim-noise 0.25 --act-func relu --max-iters 40000 --num-train TRAINING_SIZE --layer-sizes LAYER_SIZES[TRAINING_SIZE] --ridge 0.0001,0.000001,0.00000001 --num-inits 2 --cv 5
 ```
 
-## Eight variable function
+### Eight variable function
 We used the following network sizes and ridge penalty paraemters for fitting the eight-variable function example in the paper:
 ```
 LAYER_SIZES = {
@@ -94,5 +95,5 @@ We then ran:
 python main_norefit.py --sim-func eight_additive --num-p 8 --var-import-group-sizes 4 --sim-noise 2.5 --act-func relu --max-iters 40000 --num-train TRAINING_SIZE --layer-sizes LAYER_SIZES[TRAINING_SIZE] --ridge RIDGE[TRAINING_SIZE] --num-inits 1
 ```
 
-## ICU Data analysis
+### ICU Data analysis
 The icu data was fit using the augmented MTL network, i.e. using `python main_norefit.py`, with options `---max-iter 10000 --sgd-sample-size 12000 --layer-sizes "116,4,3,2,1"`.
