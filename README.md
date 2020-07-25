@@ -1,5 +1,7 @@
 # Variable importance in neural networks
 
+Feng, Jean, Brian Williamson, Noah Simon, and Marco Carone. 2018. “Nonparametric Variable Importance Using an Augmented Neural Network with Multi-Task Learning.” International Conference on Machine Learning 80: 1496–1505. http://proceedings.mlr.press/v80/feng18a.html.
+
 ## Installation instructions
 Runs with python 2.7 (other versions are not tested).
 See `requirements.txt` for python libraries/versions
